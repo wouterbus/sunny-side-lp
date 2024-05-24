@@ -1,0 +1,172 @@
+@use '../abstract/root';
+@use '../abstract/variables';
+
+.hero {
+    background-image: url(/images/desktop/image-header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 100vh;
+    width: 100%;
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        gap: 100px;
+
+        h1 {
+            text-align: center;
+            font-size: calc(2vw + 2vh);
+            text-transform: uppercase;
+            font-family: variables.$f-family-titles;
+            color: #fff;
+            letter-spacing: 16px;
+        }
+    }
+
+    .header {
+        display: flex;
+        gap: 700px;
+        margin: 0 auto;
+        padding: 20px;
+        max-width: 1440px;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        nav {
+            .closed {
+                display: none;
+            }
+
+            .open {
+                display: inline-block;
+            }
+        }
+
+        ul {
+            display: inline-flex;
+            gap: 40px;
+
+            li {
+                list-style-type: none;
+                font-family: variables.$f-family-body;
+                color: variables.$neutral-color-white;
+                font-size: variables.$f-size-body;
+                padding: 1.1rem;
+                cursor: pointer;
+
+                &:last-of-type {
+                    background-color: variables.$neutral-color-white;
+                    border: 1px solid variables.$neutral-color-white;
+                    border-radius: 36px;
+                    font-weight: 700;
+                    color: variables.$neutral-color-dark-blue;
+                    font-family: variables.$f-family-titles;
+                    text-transform: uppercase;
+                    padding: 1.1rem 2rem;
+
+                    &:hover {
+                        color: variables.$neutral-color-white;
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+
+        img {
+            width: 124px;
+            height: 24px;
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .hero {
+        .header {
+            width: 100%;
+            max-width: inherit;
+
+            img {
+                margin-top: 20px;
+                margin-left: 50px;
+            }
+
+            nav {
+                align-items: flex-end;
+
+                .box-mobile {
+                    display: none; /* Hide by default */
+                    background-color: white;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 30px;
+                    width: 330px;
+                    padding: 40px 20px;
+                    margin-top: 40px;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        right: 0;
+                        top: -24px;
+                        border-top: 24px solid transparent;
+                        border-right: 24px solid white;
+                        border-bottom: 24px solid transparent;
+                        border-left: 24px solid transparent;
+                    }
+
+                    a {
+                        font-family: variables.$f-family-body;
+                        font-weight: 500;
+                        color: variables.$neutral-color-very-grayishblue;
+                    }
+
+                    a:last-of-type {
+                        background-color: variables.$primary-color-yellow;
+                        border-radius: 40px;
+                        padding: 20px 50px;
+                    }
+                }
+
+                ul.hamburger {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    gap: 6px;
+                }
+
+                li {
+                    height: 4px;
+                    width: 26px;
+                    padding: 0px;
+                    background-color: white;
+                }
+
+                li:last-of-type {
+                    display: none;
+                }
+
+                .closed {
+                    display: block;
+                    position: absolute;
+                    right: 50px;
+                    top: 20px;
+                }
+
+                .open {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+

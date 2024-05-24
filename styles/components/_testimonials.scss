@@ -1,0 +1,57 @@
+@use '../abstract/variables';
+
+.testimonials {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 150px 0;
+    h4{
+        text-align: center;
+        color: variables.$neutral-color-dark-grayishblue;
+        text-transform: uppercase;
+        font-family: variables.$f-family-titles;
+        letter-spacing: 2px;
+        font-size: 22px;
+        margin-bottom: 120px;
+    }
+    h5{
+        margin: 0;
+        font-family: variables.$f-family-titles;
+        font-size: 18px;
+        color: variables.$neutral-color-dark-blue;
+        margin-bottom: 16px;
+    }
+    p{
+        font-family: variables.$f-family-body;
+        color: variables.$neutral-color-dark-grayishblue;
+        font-weight: 500;
+        line-height: 30px;
+        font-size: 18px;
+        color: variables.$neutral-color-very-grayishblue ;
+    }
+    .wrapper{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+        .box{
+            img{
+                border-radius: 50%;
+                margin-bottom: 16px;
+            }
+            small{
+                font-family: variables.$f-family-body;
+                color: variables.$neutral-color-grayishblue;
+                font-weight: 500;
+            }
+            .footer{
+                margin-top: 75px;
+            }
+        }
+    }
+}
+    @media (max-width:768px) {
+
+.wrapper {
+    flex-direction: column;
+}
+    }

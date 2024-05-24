@@ -1,0 +1,38 @@
+@use '../abstract/root';
+@use '../abstract/variables';
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 400px;
+    gap: 50px;
+    background-color: #90D4C5;
+    padding: 0;
+    img{
+        text-align: center;
+    }
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 300px;
+        padding: 0;
+        align-items: center;
+        font-family: variables.$f-family-body;
+        li{
+            list-style-type: none;
+            color: variables.$primary-color-darkcyan;
+            cursor: pointer;
+            font-size: 18px;
+            &:hover{
+                color: white;
+            }
+        }
+    }
+    .socials{
+        display: flex;
+        gap: 30px;
+    }
+}

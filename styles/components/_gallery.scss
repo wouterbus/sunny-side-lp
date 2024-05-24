@@ -1,0 +1,21 @@
+@use '../abstract/root';
+@use '../abstract/variables';
+
+.images{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    img{
+        width: 25%;
+    }
+}
+
+@media(max-width:768px) {
+    .images{
+        img{
+            width: 50%;
+        }
+    }
+}
